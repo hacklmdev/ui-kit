@@ -12,7 +12,7 @@ const components: Components = {
   pre: ({ children, ...props }) => (
     <pre
       {...props}
-      className="overflow-x-auto max-w-full rounded bg-code px-3 py-2 text-xs font-mono"
+      className="overflow-x-auto max-w-full rounded bg-code px-3 py-2 text-xs font-mono text-foreground"
     >
       {children}
     </pre>
@@ -20,7 +20,7 @@ const components: Components = {
   code: ({ children, ...props }) => (
     <code
       {...props}
-      className="break-all rounded bg-code px-1 py-0.5 text-xs font-mono"
+      className="break-all rounded bg-code px-1 py-0.5 text-xs font-mono text-foreground"
     >
       {children}
     </code>
@@ -55,7 +55,7 @@ interface MarkdownContentProps {
 export default function MarkdownContent({ children, className }: MarkdownContentProps) {
   return (
     <div
-      className={`prose prose-sm max-w-none overflow-hidden [overflow-wrap:break-word] dark:prose-invert ${className ?? ""}`}
+      className={`prose prose-sm max-w-none overflow-hidden [overflow-wrap:break-word] dark:prose-invert prose-pre:text-foreground prose-code:text-foreground ${className ?? ""}`}
     >
       <ReactMarkdown remarkPlugins={[remarkGfm]} components={components}>
         {children}
