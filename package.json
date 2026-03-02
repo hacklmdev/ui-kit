@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "description": "HackLM design system — all components, tokens, and patterns in one place.",
   "type": "module",
-  "homepage": "https://hacklmdev.github.io/ui-kit",
+  "homepage": "https://ui-kit.hacklm.dev/",
   "scripts": {
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
