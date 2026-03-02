@@ -3,10 +3,14 @@
   "version": "0.1.0",
   "description": "HackLM design system — all components, tokens, and patterns in one place.",
   "type": "module",
+  "homepage": "https://hacklmdev.github.io/ui-kit",
   "scripts": {
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "build": "vite build",
+    "predeploy": "storybook build --base-path /ui-kit --output-dir ./storybook-static",
+    "deploy": "gh-pages -d storybook-static"
   },
   "devDependencies": {
     "@chromatic-com/storybook": "^5.0.1",
@@ -21,7 +25,8 @@
     "storybook": "^10.2.13",
     "tailwindcss": "^4.2.1",
     "typescript": "^5.9.3",
-    "vite": "^7.3.1"
+    "vite": "^7.3.1",
+    "gh-pages": "^5.0.0"
   },
   "dependencies": {
     "lucide-react": "^0.575.0",
