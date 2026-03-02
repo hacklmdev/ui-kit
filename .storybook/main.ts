@@ -1,4 +1,5 @@
 import type { StorybookConfig } from "@storybook/react-vite";
+import type { InlineConfig } from "vite";
 
 const config: StorybookConfig = {
   stories: [
@@ -13,6 +14,10 @@ const config: StorybookConfig = {
   framework: "@storybook/react-vite",
   docs: {
     defaultName: "Docs",
+  },
+  viteFinal: (config: InlineConfig) => {
+    config.base = "/ui-kit/";
+    return config;
   },
 };
 

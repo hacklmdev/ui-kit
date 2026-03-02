@@ -9,7 +9,7 @@
     "build-storybook": "storybook build",
     "typecheck": "tsc --noEmit",
     "build": "vite build",
-    "predeploy": "storybook build --base-path /ui-kit --output-dir ./storybook-static",
+    "predeploy": "storybook build --output-dir ./storybook-static",
     "deploy": "gh-pages -d storybook-static"
   },
   "devDependencies": {
