@@ -16,6 +16,7 @@ interface PopupAppProps {
   loading?: boolean;
   version?: string;
   onOpenDashboard?: () => void;
+  initialDark?: boolean;
 }
 
 export function PopupApp({
@@ -23,11 +24,13 @@ export function PopupApp({
   loading = false,
   version = "0.1.0",
   onOpenDashboard,
+  initialDark = false,
 }: PopupAppProps) {
+  const [dark, setDark] = React.useState(initialDark);
   const countFor = (p: Provider) => threads.filter((t) => t.provider === p).length;
 
   return (
-    <div className="p-4 flex flex-col gap-4" style={{ width: 360 }}>
+    <div className={`p-4 flex flex-col gap-4 bg-background text-foreground${dark ? " dark" : ""}`} style={{ width: 360 }}>
       {/* Header */}
       <div className="flex items-center justify-between pb-3 border-b border-grid">
         <HacklmLogo size={28} />

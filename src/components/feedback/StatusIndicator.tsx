@@ -25,7 +25,7 @@ const defaultLabels: Record<SaveStatus, string> = {
 };
 
 const statusColors: Record<SaveStatus, string> = {
-  idle:   "#fbfbfb",
+  idle:   "var(--color-surface)",
   saving: "#fb631b",
   done:   "#27ae60",
   error:  "#ef4444",
@@ -38,7 +38,7 @@ export function StatusIndicator({
   labels,
 }: StatusIndicatorProps) {
   const bg = statusColors[status];
-  const textColor = status === "idle" ? "#000" : "#fff";
+  const textColor = status === "idle" ? "var(--color-foreground)" : "#fff";
   const label = { ...defaultLabels, ...labels }[status];
 
   return (
@@ -51,7 +51,7 @@ export function StatusIndicator({
           height: size,
           borderRadius: "50%",
           background: bg,
-          border: "1px solid #e2e2e2",
+          border: "1px solid var(--color-grid)",
           color: textColor,
           display: "flex",
           alignItems: "center",

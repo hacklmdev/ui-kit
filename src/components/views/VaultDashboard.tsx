@@ -59,7 +59,7 @@ export function VaultDashboard({
   const providersWithThreads = ALL_PROVIDERS.filter((p) => threads.some((t) => t.provider === p));
 
   return (
-    <div className={`flex h-screen bg-background${dark ? " dark" : ""}`}>
+    <div className={`flex h-screen bg-background text-foreground${dark ? " dark" : ""}`}>
 
       {/* ── Sidebar ─────────────────────────────────────────┤ */}
       <aside className="w-64 shrink-0 bg-surface border-r border-grid p-4 flex flex-col gap-4">

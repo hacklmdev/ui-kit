@@ -65,8 +65,8 @@
     --color-code:           #242424;
     --color-grid:           #2a2a2a;
     --color-foreground:     #e8e8e8;
-    --color-muted:          #888888;
-    --color-faint:          #555555;
+    --color-muted:          #a3a3a3;
+    --color-faint:          #737373;
     color-scheme: dark;
   }
 }
