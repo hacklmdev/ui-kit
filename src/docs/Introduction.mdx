@@ -1,0 +1,48 @@
+import { Meta } from "@storybook/addon-docs/blocks";
+
+<Meta title="HackLM / Introduction" />
+
+# HackLM UI Kit
+
+The **@hacklm/ui-kit** design system — every component, token, and pattern used across the HackLM product family.
+
+## What's in here
+
+| Section | Contents |
+|---------|----------|
+| **Brand** | `HacklmIcon`, `HacklmLogo` |
+| **Primitives** | `Button`, `Input`, `Textarea`, `Badge`, `Spinner`, `Divider`, `Toggle` |
+| **Typography** | `Heading`, `Text`, `InlineCode`, `MonoLabel` |
+| **Layout** | `Card`, `CardHeader`, `CardBody`, `CardFooter`, `EmptyState` |
+| **Content** | `MarkdownContent`, `MessageBubble`, `ThreadListItem`, `ProviderBadge`, `ProviderPill` |
+| **Feedback** | `Alert`, `StatusIndicator`, `SaveProgressCounter` |
+| **Floating** | `FloatingDial` |
+| **Views** | `PopupApp`, `VaultDashboard` |
+
+## Design principles
+
+1. **Monospace-first** — JetBrains Mono for all data, counts, labels, status text.
+2. **Minimal radius** — `4px` only. No large rounded corners.
+3. **Token-driven dark mode** — flip `.dark` class on any ancestor. Semantic tokens handle the rest.
+4. **Accent** — `#fb631b` (HackLM orange). Use _rarely_ — primary CTAs and active states only.
+5. **No shadows except modals** — borders define elevation.
+
+## Fonts
+
+```
+Inter         → body, headings, prose
+JetBrains Mono → labels, counts, IDs, code, buttons
+```
+
+Both loaded from Google Fonts in `global.css`.
+
+## Colour palette
+
+| Token | Light | Dark |
+|-------|-------|------|
+| `background` | `#fbfbfb` | `#111111` |
+| `accent` | `#fb631b` | `#fb631b` |
+| `accent-hover` | `#e85310` | `#e85310` |
+| `grid` | `#e2e2e2` | `#2a2a2a` |
+| `muted` | `#666666` | `#888888` |
+| `faint` | `#999999` | `#555555` |

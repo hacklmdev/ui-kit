@@ -1,0 +1,86 @@
+import { Meta, ColorPalette, ColorItem } from "@storybook/addon-docs/blocks";
+
+<Meta title="HackLM / Design Tokens" />
+
+# Design Tokens
+
+All tokens are defined as CSS custom properties in `src/styles/global.css` and exposed as Tailwind v4 theme variables.
+
+## Colours — Brand
+
+<ColorPalette>
+  <ColorItem title="accent" subtitle="--color-accent" colors={{ Accent: "#fb631b" }} />
+  <ColorItem title="accent-hover" subtitle="--color-accent-hover" colors={{ "Accent Hover": "#e85310" }} />
+</ColorPalette>
+
+## Colours — Surface
+
+<ColorPalette>
+  <ColorItem title="background" subtitle="--color-background" colors={{ Light: "#fbfbfb", Dark: "#111111" }} />
+</ColorPalette>
+
+## Colours — Border
+
+<ColorPalette>
+  <ColorItem title="grid" subtitle="--color-grid" colors={{ Light: "#e2e2e2", Dark: "#2a2a2a" }} />
+</ColorPalette>
+
+## Colours — Text Scale
+
+<ColorPalette>
+  <ColorItem title="muted"  subtitle="--color-muted"  colors={{ Light: "#666666", Dark: "#888888" }} />
+  <ColorItem title="faint"  subtitle="--color-faint"  colors={{ Light: "#999999", Dark: "#555555" }} />
+</ColorPalette>
+
+## Colours — Providers
+
+<ColorPalette>
+  <ColorItem title="ChatGPT"    subtitle="--color-provider-chatgpt"    colors={{ ChatGPT:    "#10a37f" }} />
+  <ColorItem title="Claude"     subtitle="--color-provider-claude"     colors={{ Claude:     "#d97706" }} />
+  <ColorItem title="Gemini"     subtitle="--color-provider-gemini"     colors={{ Gemini:     "#4285f4" }} />
+  <ColorItem title="Perplexity" subtitle="--color-provider-perplexity" colors={{ Perplexity: "#22d3ee" }} />
+  <ColorItem title="Grok"       subtitle="--color-provider-grok"       colors={{ Grok:       "#ef4444" }} />
+</ColorPalette>
+
+## Colours — Status
+
+<ColorPalette>
+  <ColorItem title="Success" subtitle="--color-status-success" colors={{ Success: "#27ae60" }} />
+  <ColorItem title="Error"   subtitle="--color-status-error"   colors={{ Error:   "#ef4444" }} />
+  <ColorItem title="Warning" subtitle="--color-status-warning" colors={{ Warning: "#f59e0b" }} />
+  <ColorItem title="Info"    subtitle="--color-status-info"    colors={{ Info:    "#3b82f6" }} />
+</ColorPalette>
+
+## Typography
+
+| Token | Value |
+|-------|-------|
+| `--font-sans` | `"Inter", sans-serif` |
+| `--font-mono` | `"JetBrains Mono", monospace` |
+
+## Radii
+
+| Token | Value |
+|-------|-------|
+| `--radius-sm` | `4px` |
+| `--radius-md` | `8px` |
+
+## Tailwind usage
+
+Every token is usable as a Tailwind class:
+
+```html
+<!-- Brand -->
+<div class="bg-accent text-white">Primary</div>
+<div class="hover:bg-accent-hover">Hover</div>
+
+<!-- Borders -->
+<div class="border border-grid">Card</div>
+
+<!-- Text -->
+<p class="text-muted">Secondary text</p>
+<span class="text-faint">Metadata</span>
+
+<!-- Background -->
+<body class="bg-background">…</body>
+```

@@ -1,0 +1,53 @@
+import { Meta } from "@storybook/addon-docs/blocks";
+
+<Meta title="HackLM / Contributing" />
+
+# Contributing to the UI Kit
+
+## Adding a component
+
+1. Create `src/components/<category>/<ComponentName>.tsx`
+2. Create `src/components/<category>/<ComponentName>.stories.tsx`
+3. Export from `src/index.ts`
+4. Add a row to the table in **Introduction.mdx**
+
+## Story conventions
+
+- **Title format:** `Category / ComponentName` (e.g. `Primitives / Button`)
+- Always export an `AllVariants` or similar composite story
+- Always include a `DarkMode` story — wrap in `<div className="dark bg-background …">`
+- Tag stories with `["autodocs"]` so docs pages are auto-generated
+
+## File structure
+
+```
+src/
+  components/
+    brand/       ← HacklmIcon, HacklmLogo
+    primitives/  ← Button, Input, Badge, Spinner, Divider, Toggle
+    typography/  ← Heading, Text, InlineCode, MonoLabel
+    layout/      ← Card, EmptyState
+    content/     ← MarkdownContent, MessageBubble, ThreadListItem, ProviderBadge
+    feedback/    ← Alert, StatusIndicator
+    floating/    ← FloatingDial
+    views/       ← PopupApp, VaultDashboard
+  docs/          ← MDX pages
+  styles/        ← global.css (design tokens)
+  types/         ← Shared TypeScript interfaces
+  utils/         ← cn(), helpers
+```
+
+## Naming rules
+
+- PascalCase for components and their files
+- kebab-case for the `slug` in Storybook titles
+- Suffix stories file with `.stories.tsx`
+- Use `cn()` from `@/utils/cn` — do **not** add clsx or twMerge
+
+## Dark mode
+
+Always test dark mode. The Storybook toolbar has a light/dark toggle.
+
+Components must work with class-based dark: `@custom-variant dark (&:where(.dark, .dark *))`.
+
+Use explicit `dark:` variants for non-token colours (e.g. `dark:bg-[#1a1a1a]`).

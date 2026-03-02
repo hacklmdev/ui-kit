@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+/* ─── Dark mode ─────────────────────────────────────────────────── */
+/* Class-based: applies when an ancestor carries the .dark class     */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* ─── Design tokens ─────────────────────────────────────────────── */
+@theme {
+  /* Brand colours */
+  --color-accent:        #fb631b;
+  --color-accent-hover:  #e85310;
+
+  /* Surfaces */
+  --color-background:    #fbfbfb;
+
+  /* Borders / grid lines */
+  --color-grid:          #e2e2e2;
+
+  /* Text scale */
+  --color-muted:         #666666;
+  --color-faint:         #999999;
+
+  /* Provider palette */
+  --color-provider-chatgpt:    #10a37f;
+  --color-provider-claude:     #d97706;
+  --color-provider-gemini:     #4285f4;
+  --color-provider-perplexity: #22d3ee;
+  --color-provider-grok:       #ef4444;
+
+  /* Status palette */
+  --color-status-success: #27ae60;
+  --color-status-error:   #ef4444;
+  --color-status-warning: #f59e0b;
+  --color-status-info:    #3b82f6;
+
+  /* Typography */
+  --font-sans: "Inter", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+
+  /* Radii */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+}
+
+/* ─── Dark overrides ────────────────────────────────────────────── */
+@layer base {
+  body {
+    @apply bg-background text-black antialiased font-sans;
+  }
+
+  .dark {
+    --color-background: #111111;
+    --color-grid:       #2a2a2a;
+    --color-muted:      #888888;
+    --color-faint:      #555555;
+    color-scheme: dark;
+  }
+}
+
+/* ─── Utility animations ─────────────────────────────────────────── */
+@layer utilities {
+  @keyframes hacklm-fade-in {
+    from { opacity: 0; transform: translateY(4px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes hacklm-spin {
+    to { transform: rotate(360deg); }
+  }
+
+  @keyframes hacklm-dial-in {
+    from { opacity: 0; transform: scale(0.85) translateY(8px); }
+    to   { opacity: 1; transform: scale(1) translateY(0); }
+  }
+
+  .animate-fade-in  { animation: hacklm-fade-in  0.18s ease both; }
+  .animate-spin-sm  { animation: hacklm-spin     0.8s linear infinite; }
+  .animate-dial-in  { animation: hacklm-dial-in  0.18s cubic-bezier(.34,1.56,.64,1) both; }
+}
