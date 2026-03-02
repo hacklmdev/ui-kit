@@ -12,7 +12,7 @@ const components: Components = {
   pre: ({ children, ...props }) => (
     <pre
       {...props}
-      className="overflow-x-auto max-w-full rounded bg-gray-100 dark:bg-[#222] px-3 py-2 text-xs font-mono"
+      className="overflow-x-auto max-w-full rounded bg-code px-3 py-2 text-xs font-mono"
     >
       {children}
     </pre>
@@ -20,7 +20,7 @@ const components: Components = {
   code: ({ children, ...props }) => (
     <code
       {...props}
-      className="break-all rounded bg-gray-100 dark:bg-[#222] px-1 py-0.5 text-xs font-mono"
+      className="break-all rounded bg-code px-1 py-0.5 text-xs font-mono"
     >
       {children}
     </code>

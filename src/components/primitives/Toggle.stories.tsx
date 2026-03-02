@@ -44,7 +44,7 @@ export const Group: StoryObj = {
       setSettings((s) => ({ ...s, [k]: v }));
 
     return (
-      <div className="flex flex-col gap-4 p-4 w-64 border border-grid rounded-sm bg-white dark:bg-[#1a1a1a]">
+      <div className="flex flex-col gap-4 p-4 w-64 border border-grid rounded-sm bg-surface">
         <p className="text-[10px] font-mono text-faint uppercase tracking-wide">Settings</p>
         <Toggle checked={settings.autoSave} onChange={set("autoSave")} label="Auto-save on navigate" />
         <Toggle checked={settings.darkMode} onChange={set("darkMode")} label="Dark mode" />

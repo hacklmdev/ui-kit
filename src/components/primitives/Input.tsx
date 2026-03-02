@@ -18,8 +18,8 @@ interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
 }
 
 const baseInput =
-  "w-full bg-white dark:bg-[#1a1a1a] border border-grid rounded-sm " +
-  "font-mono text-black dark:text-[#e8e8e8] placeholder:text-faint " +
+  "w-full bg-surface border border-grid rounded-sm " +
+  "font-mono text-foreground placeholder:text-faint " +
   "transition focus:outline-none focus:ring-1 focus:ring-accent/50 " +
   "disabled:opacity-50 disabled:cursor-not-allowed";
 

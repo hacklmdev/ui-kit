@@ -29,13 +29,13 @@ const variants: Record<ButtonVariant, string> = {
   primary:
     "bg-accent hover:bg-accent-hover text-white",
   secondary:
-    "bg-white dark:bg-[#1a1a1a] border border-grid " +
-    "text-black dark:text-[#e8e8e8] " +
-    "hover:bg-gray-50 dark:hover:bg-[#1f1f1f]",
+    "bg-surface border border-grid " +
+    "text-foreground " +
+    "hover:bg-surface-hover",
   ghost:
-    "text-muted hover:text-black dark:hover:text-[#e8e8e8] hover:bg-gray-100 dark:hover:bg-[#1f1f1f]",
+    "text-muted hover:text-foreground hover:bg-surface-raised",
   danger:
-    "bg-white dark:bg-[#1a1a1a] border border-grid text-red-600 dark:text-red-400 " +
+    "bg-surface border border-grid text-red-600 dark:text-red-400 " +
     "hover:bg-red-50 dark:hover:bg-red-950/30 hover:border-red-300 dark:hover:border-red-800",
 };
 

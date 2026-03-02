@@ -13,14 +13,21 @@
   --color-accent-hover:  #e85310;
 
   /* Surfaces */
-  --color-background:    #fbfbfb;
+  --color-background:     #fbfbfb;
+  --color-surface:        #ffffff;
+  --color-surface-hover:  #f7f7f7;
+  --color-surface-raised: #f0f0f0;
+
+  /* Code blocks */
+  --color-code:           #f3f3f3;
 
   /* Borders / grid lines */
-  --color-grid:          #e2e2e2;
+  --color-grid:           #e2e2e2;
 
   /* Text scale */
-  --color-muted:         #666666;
-  --color-faint:         #999999;
+  --color-foreground:     #0d0d0d;
+  --color-muted:          #666666;
+  --color-faint:          #999999;
 
   /* Provider palette */
   --color-provider-chatgpt:    #10a37f;
@@ -47,14 +54,19 @@
 /* ─── Dark overrides ────────────────────────────────────────────── */
 @layer base {
   body {
-    @apply bg-background text-black antialiased font-sans;
+    @apply bg-background text-foreground antialiased font-sans;
   }
 
   .dark {
-    --color-background: #111111;
-    --color-grid:       #2a2a2a;
-    --color-muted:      #888888;
-    --color-faint:      #555555;
+    --color-background:     #111111;
+    --color-surface:        #1a1a1a;
+    --color-surface-hover:  #1f1f1f;
+    --color-surface-raised: #262626;
+    --color-code:           #242424;
+    --color-grid:           #2a2a2a;
+    --color-foreground:     #e8e8e8;
+    --color-muted:          #888888;
+    --color-faint:          #555555;
     color-scheme: dark;
   }
 }

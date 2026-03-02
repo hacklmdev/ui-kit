@@ -66,7 +66,7 @@ export function HacklmLogo({ size = 24, className, style, iconSrc }: IconProps) 
     >
       <HacklmIcon size={size} iconSrc={iconSrc} />
       <div className="flex flex-col leading-none">
-        <span className="font-mono text-[11px] font-semibold tracking-tight text-black dark:text-[#e8e8e8]">
+        <span className="font-mono text-[11px] font-semibold tracking-tight text-foreground">
           AI Chat Backup
         </span>
         <span className="font-mono text-[9px] text-faint tracking-tight">

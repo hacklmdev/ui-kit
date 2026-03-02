@@ -42,8 +42,8 @@ export function MessageBubble({
           <button
             onClick={() => onCopy(m.id)}
             className="flex items-center gap-1 px-2 py-1 text-[10px] font-mono rounded-sm
-                       bg-white dark:bg-[#1a1a1a] border border-grid text-faint
-                       hover:text-black dark:hover:text-[#e8e8e8] hover:border-muted transition"
+                       bg-surface border border-grid text-faint
+                       hover:text-foreground hover:border-muted transition"
           >
             {isCopied
               ? <><Check size={10} strokeWidth={2.5} /> Copied</>
@@ -54,8 +54,8 @@ export function MessageBubble({
           <button
             onClick={() => onShare(m.content)}
             className="flex items-center gap-1 px-2 py-1 text-[10px] font-mono rounded-sm
-                       bg-white dark:bg-[#1a1a1a] border border-grid text-faint
-                       hover:text-black dark:hover:text-[#e8e8e8] hover:border-muted transition"
+                       bg-surface border border-grid text-faint
+                       hover:text-foreground hover:border-muted transition"
           >
             <Share2 size={10} strokeWidth={2} /> Share
           </button>
@@ -67,8 +67,8 @@ export function MessageBubble({
         className={cn(
           "px-5 py-4 rounded-sm text-sm leading-relaxed border border-grid overflow-hidden",
           isUser
-            ? "bg-gray-50 dark:bg-[#1f1f1f] text-black dark:text-[#e8e8e8]"
-            : "bg-white dark:bg-[#1a1a1a] text-black dark:text-[#e8e8e8]",
+            ? "bg-surface-hover text-foreground"
+            : "bg-surface text-foreground",
         )}
       >
         <MarkdownContent>{m.content}</MarkdownContent>

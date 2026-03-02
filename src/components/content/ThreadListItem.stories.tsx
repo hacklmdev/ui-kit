@@ -41,7 +41,7 @@ export const ListInteractive: StoryObj = {
   render: () => {
     const [activeId, setActiveId] = useState("1");
     return (
-      <div className="w-64 border border-grid rounded-sm p-2 bg-white dark:bg-[#1a1a1a]">
+      <div className="w-64 border border-grid rounded-sm p-2 bg-surface">
         <ThreadList
           threads={mockThreads}
           activeId={activeId}

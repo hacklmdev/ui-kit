@@ -19,7 +19,7 @@ interface BadgeProps {
 
 const variantClasses: Record<BadgeVariant, string> = {
   default:
-    "bg-white dark:bg-[#1a1a1a] border border-grid text-muted dark:text-[#888]",
+    "bg-surface border border-grid text-muted",
   accent:
     "bg-accent/10 border border-accent/30 text-accent",
   success:

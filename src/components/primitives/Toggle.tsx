@@ -32,7 +32,7 @@ export function Toggle({ checked, onChange, label, disabled, className }: Toggle
           "focus-visible:ring-2 focus-visible:ring-accent/60 focus-visible:outline-none",
           checked
             ? "bg-accent border-accent"
-            : "bg-white dark:bg-[#1a1a1a] border-grid",
+            : "bg-surface border-grid",
         )}
         onClick={() => !disabled && onChange(!checked)}
         onKeyDown={(e) => {
@@ -50,7 +50,7 @@ export function Toggle({ checked, onChange, label, disabled, className }: Toggle
         />
       </span>
       {label && (
-        <span className="text-xs font-mono text-black dark:text-[#e8e8e8]">{label}</span>
+        <span className="text-xs font-mono text-foreground">{label}</span>
       )}
     </label>
   );

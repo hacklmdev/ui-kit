@@ -31,13 +31,13 @@ export function PopupApp({
       {/* Header */}
       <div className="flex items-center justify-between pb-3 border-b border-grid">
         <HacklmLogo size={28} />
-        <span className="text-xs text-muted font-mono bg-white px-2 py-0.5 rounded-sm border border-grid">
+        <span className="text-xs text-muted font-mono bg-surface px-2 py-0.5 rounded-sm border border-grid">
           v{version}
         </span>
       </div>
 
       {/* Stats */}
-      <div className="bg-white border border-grid p-4">
+      <div className="bg-surface border border-grid p-4">
         {loading ? (
           <div className="flex items-center justify-center py-4">
             <Spinner size="md" />

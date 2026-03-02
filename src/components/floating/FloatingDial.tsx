@@ -52,9 +52,9 @@ export function FloatingDial({
   const fabBg =
     saveStatus === "done"  ? "#27ae60" :
     saveStatus === "error" ? "#ef4444" :
-    open ? "#fb631b" : "#fbfbfb";
+    open ? "#fb631b" : "var(--color-surface)";
 
-  const fabColor = saveStatus !== "idle" || open ? "#fff" : "#000";
+  const fabColor = saveStatus !== "idle" || open ? "#fff" : "var(--color-foreground)";
 
   const FabIcon =
     saveStatus === "saving" ? Loader2 :
@@ -108,13 +108,13 @@ export function FloatingDial({
             >
               {/* Tooltip */}
               <div style={{
-                background: "#fff",
-                border: "1px solid #e2e2e2",
+                background: "var(--color-surface)",
+                border: "1px solid var(--color-grid)",
                 borderRadius: 4,
                 padding: "4px 10px",
                 fontSize: 12,
                 fontFamily: '"JetBrains Mono", monospace',
-                color: "#000",
+                color: "var(--color-foreground)",
                 whiteSpace: "nowrap",
                 boxShadow: "0 2px 8px rgba(0,0,0,0.07)",
                 pointerEvents: "none",
@@ -129,9 +129,9 @@ export function FloatingDial({
                   width: ACTION,
                   height: ACTION,
                   borderRadius: "50%",
-                  border: "1px solid #e2e2e2",
-                  background: "#fbfbfb",
-                  color: "#000",
+                  border: "1px solid var(--color-grid)",
+                  background: "var(--color-surface)",
+                  color: "var(--color-foreground)",
                   cursor: "pointer",
                   display: "flex",
                   alignItems: "center",
@@ -154,7 +154,7 @@ export function FloatingDial({
           width: FAB,
           height: FAB,
           borderRadius: "50%",
-          border: "1px solid #e2e2e2",
+          border: "1px solid var(--color-grid)",
           background: fabBg,
           color: fabColor,
           cursor: "pointer",
@@ -196,9 +196,9 @@ export function FloatingDial({
             style={{
               width: 500,
               maxHeight: "70vh",
-              background: "#fbfbfb",
+              background: "var(--color-surface)",
               borderRadius: 4,
-              border: "1px solid #e2e2e2",
+              border: "1px solid var(--color-grid)",
               padding: 24,
               display: "flex",
               flexDirection: "column",
@@ -207,12 +207,12 @@ export function FloatingDial({
             }}
           >
             <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-              <h2 style={{ margin: 0, fontSize: 18, fontWeight: 700, fontFamily: '"Inter", sans-serif' }}>
+              <h2 style={{ margin: 0, fontSize: 18, fontWeight: 700, fontFamily: '"Inter", sans-serif', color: "var(--color-foreground)" }}>
                 Restore from Vault
               </h2>
               <button
                 onClick={() => setRestoreOpen(false)}
-                style={{ background: "none", border: "none", cursor: "pointer", color: "#94a3b8", padding: 4 }}
+                style={{ background: "none", border: "none", cursor: "pointer", color: "var(--color-faint)", padding: 4 }}
               >
                 <X size={18} strokeWidth={2} />
               </button>
@@ -227,12 +227,13 @@ export function FloatingDial({
                 placeholder="Search conversations…"
                 style={{
                   width: "100%",
-                  border: "1px solid #e2e2e2",
+                  border: "1px solid var(--color-grid)",
                   borderRadius: 4,
                   padding: "8px 10px 8px 30px",
                   fontFamily: '"JetBrains Mono", monospace',
                   fontSize: 12,
-                  background: "#fff",
+                  background: "var(--color-surface)",
+                  color: "var(--color-foreground)",
                   boxSizing: "border-box",
                 }}
               />
@@ -241,7 +242,7 @@ export function FloatingDial({
             {/* Thread list */}
             <div style={{ overflowY: "auto", flex: 1, display: "flex", flexDirection: "column", gap: 8 }}>
               {filtered.length === 0 ? (
-                <p style={{ textAlign: "center", color: "#999", fontSize: 13, fontFamily: '"Inter", sans-serif', padding: "24px 0" }}>
+                <p style={{ textAlign: "center", color: "var(--color-faint)", fontSize: 13, fontFamily: '"Inter", sans-serif', padding: "24px 0" }}>
                   No conversations found.
                 </p>
               ) : (
@@ -252,18 +253,18 @@ export function FloatingDial({
                     style={{
                       width: "100%",
                       textAlign: "left",
-                      border: "1px solid #e2e2e2",
+                      border: "1px solid var(--color-grid)",
                       borderRadius: 4,
-                      background: "#fff",
+                      background: "var(--color-surface)",
                       padding: "12px 16px",
                       cursor: "pointer",
-                      color: "#000",
+                      color: "var(--color-foreground)",
                     }}
                   >
-                    <div style={{ fontWeight: 500, fontSize: 14, fontFamily: '"Inter", sans-serif' }}>
+                    <div style={{ fontWeight: 500, fontSize: 14, fontFamily: '"Inter", sans-serif', color: "var(--color-foreground)" }}>
                       {t.title}
                     </div>
-                    <div style={{ fontSize: 11, color: "#666", marginTop: 4, fontFamily: '"JetBrains Mono", monospace' }}>
+                    <div style={{ fontSize: 11, color: "var(--color-muted)", marginTop: 4, fontFamily: '"JetBrains Mono", monospace' }}>
                       {PROVIDER_LABELS[t.provider]} · {t.messageCount} msgs
                     </div>
                   </button>

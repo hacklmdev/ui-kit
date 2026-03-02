@@ -62,14 +62,14 @@ export function VaultDashboard({
     <div className={`flex h-screen bg-background${dark ? " dark" : ""}`}>
 
       {/* ── Sidebar ─────────────────────────────────────────┤ */}
-      <aside className="w-64 shrink-0 bg-white dark:bg-[#1a1a1a] border-r border-grid p-4 flex flex-col gap-4">
+      <aside className="w-64 shrink-0 bg-surface border-r border-grid p-4 flex flex-col gap-4">
         {/* Header */}
         <div className="pb-4 border-b border-grid flex items-center justify-between">
           <HacklmLogo size={28} />
           <button
             onClick={() => setDark(!dark)}
             title={dark ? "Light mode" : "Dark mode"}
-            className="p-1.5 rounded-sm text-faint hover:text-muted hover:bg-gray-100 dark:hover:bg-[#262626] transition"
+            className="p-1.5 rounded-sm text-faint hover:text-muted hover:bg-surface-raised transition"
           >
             {dark ? <Sun size={14} strokeWidth={2} /> : <Moon size={14} strokeWidth={2} />}
           </button>
@@ -83,7 +83,7 @@ export function VaultDashboard({
             onChange={(e) => setSearchQuery(e.target.value)}
             placeholder="Search threads…"
             className="w-full pl-7 pr-3 py-1.5 text-xs font-mono border border-grid rounded-sm
-                       bg-white dark:bg-[#1a1a1a] text-black dark:text-[#e8e8e8]
+                       bg-surface text-foreground
                        placeholder:text-faint focus:outline-none focus:ring-1 focus:ring-accent/50"
           />
         </div>
@@ -96,7 +96,7 @@ export function VaultDashboard({
               className={`text-left px-2 py-1.5 rounded-sm text-xs font-mono transition
                 ${selectedProvider === "All"
                   ? "bg-accent/5 text-accent border border-accent/20"
-                  : "text-muted hover:bg-gray-50 dark:hover:bg-[#1f1f1f] border border-transparent"}`}
+                  : "text-muted hover:bg-surface-hover border border-transparent"}`}
             >
               All ({threads.length})
             </button>
@@ -109,7 +109,7 @@ export function VaultDashboard({
                   className={`text-left px-2 py-1.5 rounded-sm text-xs font-mono transition flex items-center gap-2
                     ${selectedProvider === p
                       ? "bg-accent/5 text-accent border border-accent/20"
-                      : "text-muted hover:bg-gray-50 dark:hover:bg-[#1f1f1f] border border-transparent"}`}
+                      : "text-muted hover:bg-surface-hover border border-transparent"}`}
                 >
                   <ProviderBadge provider={p} size="sm" />
                   ({count})
@@ -143,9 +143,9 @@ export function VaultDashboard({
           </button>
           <button
             onClick={onImport}
-            className="w-full flex items-center justify-center gap-2 px-3 py-2 bg-white dark:bg-[#1a1a1a]
-                       border border-grid hover:bg-gray-50 dark:hover:bg-[#1f1f1f]
-                       text-black dark:text-[#e8e8e8] text-xs font-mono rounded-sm transition"
+            className="w-full flex items-center justify-center gap-2 px-3 py-2 bg-surface
+                       border border-grid hover:bg-surface-hover
+                       text-foreground text-xs font-mono rounded-sm transition"
           >
             <Upload size={12} strokeWidth={2} /> Import File
           </button>
@@ -153,7 +153,7 @@ export function VaultDashboard({
       </aside>
 
       {/* ── Chat Viewer ─────────────────────────────────────┤ */}
-      <main className="flex-1 flex flex-col min-w-0 bg-white dark:bg-[#111111]">
+      <main className="flex-1 flex flex-col min-w-0 bg-background">
         {!activeThread ? (
           <div className="flex-1 flex items-center justify-center text-muted">
             <EmptyState
@@ -167,7 +167,7 @@ export function VaultDashboard({
             {/* Thread header */}
             <div className="px-6 py-4 border-b border-grid flex items-start justify-between gap-4 shrink-0">
               <div className="min-w-0">
-                <h1 className="text-base font-semibold text-black dark:text-[#e8e8e8] truncate">
+                <h1 className="text-base font-semibold text-foreground truncate">
                   {activeThread.title}
                 </h1>
                 <div className="flex items-center gap-2 mt-1">
@@ -182,7 +182,7 @@ export function VaultDashboard({
               <div className="flex items-center gap-2 shrink-0">
                 <button
                   onClick={() => onDelete?.(activeThread.id)}
-                  className="px-3 py-1.5 bg-white dark:bg-[#1a1a1a] border border-grid
+                  className="px-3 py-1.5 bg-surface border border-grid
                              hover:bg-red-50 dark:hover:bg-red-950/30 hover:border-red-300
                              text-muted hover:text-red-600 text-[11px] font-mono rounded-sm transition
                              flex items-center gap-1.5"
@@ -218,8 +218,8 @@ export function VaultDashboard({
                     <button
                       onClick={() => copyMessage(m)}
                       className="flex items-center gap-1 px-2 py-1 text-[10px] font-mono rounded-sm
-                                 bg-white dark:bg-[#1a1a1a] border border-grid text-faint
-                                 hover:text-black dark:hover:text-[#e8e8e8] hover:border-muted transition"
+                                 bg-surface border border-grid text-faint
+                                 hover:text-foreground hover:border-muted transition"
                     >
                       {copiedId === m.id
                         ? <><Check size={10} strokeWidth={2.5} /> Copied</>
@@ -230,9 +230,9 @@ export function VaultDashboard({
                   {/* Bubble */}
                   <div className={`px-5 py-4 rounded-sm text-sm leading-relaxed border border-grid overflow-hidden
                     ${m.role === "user"
-                      ? "bg-gray-50 dark:bg-[#1f1f1f]"
-                      : "bg-white dark:bg-[#1a1a1a]"}
-                    text-black dark:text-[#e8e8e8]`}
+                      ? "bg-surface-hover"
+                      : "bg-surface"}
+                    text-foreground`}
                   >
                     <MarkdownContent>{m.content}</MarkdownContent>
                   </div>

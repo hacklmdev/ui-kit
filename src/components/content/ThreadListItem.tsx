@@ -21,8 +21,8 @@ export function ThreadListItem({ thread, active = false, onClick }: ThreadListIt
       className={cn(
         "w-full text-left px-3 py-2.5 rounded-sm border transition",
         active
-          ? "bg-accent/5 border-accent/20 text-black dark:text-[#e8e8e8]"
-          : "bg-white dark:bg-[#1a1a1a] hover:bg-gray-50 dark:hover:bg-[#1f1f1f] border-transparent",
+          ? "bg-accent/5 border-accent/20 text-foreground"
+          : "bg-surface hover:bg-surface-hover border-transparent",
       )}
     >
       <div className="font-medium text-sm truncate">{thread.title}</div>

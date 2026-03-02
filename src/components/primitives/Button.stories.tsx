@@ -74,7 +74,7 @@ export const AllSizes: Story = {
 export const ActionBar: Story = {
   name: "Action Bar (real usage)",
   render: () => (
-    <div className="flex items-center gap-2 p-4 border border-grid rounded-sm bg-white dark:bg-[#1a1a1a]">
+    <div className="flex items-center gap-2 p-4 border border-grid rounded-sm bg-surface">
       <Button variant="primary" size="sm" iconLeft={<Save size={10} strokeWidth={2} />}>Save</Button>
       <Button variant="secondary" size="sm" iconLeft={<Copy size={10} strokeWidth={2} />}>Copy MD</Button>
       <Button variant="secondary" size="sm" iconLeft={<Download size={10} strokeWidth={2} />}>Export</Button>

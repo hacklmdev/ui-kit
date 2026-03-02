@@ -23,7 +23,7 @@ export function Card({ children, className, padding = "md" }: CardProps) {
   return (
     <div
       className={cn(
-        "bg-white dark:bg-[#1a1a1a] border border-grid rounded-sm",
+        "bg-surface border border-grid rounded-sm",
         paddingClasses[padding],
         className,
       )}
@@ -76,7 +76,7 @@ export function EmptyState({ icon, title, description, action, className }: Empt
       {icon && (
         <div className="text-faint mb-1">{icon}</div>
       )}
-      <p className="text-sm font-semibold text-black dark:text-[#e8e8e8] tracking-tight">
+      <p className="text-sm font-semibold text-foreground tracking-tight">
         {title}
       </p>
       {description && (

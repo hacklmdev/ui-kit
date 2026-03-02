@@ -17,9 +17,9 @@ interface HeadingProps {
 }
 
 const headingClasses: Record<HeadingLevel, string> = {
-  h1: "text-xl font-semibold text-black dark:text-[#e8e8e8] tracking-tight",
-  h2: "text-base font-semibold text-black dark:text-[#e8e8e8] tracking-tight",
-  h3: "text-sm font-semibold text-black dark:text-[#e8e8e8]",
+  h1: "text-xl font-semibold text-foreground tracking-tight",
+  h2: "text-base font-semibold text-foreground tracking-tight",
+  h3: "text-sm font-semibold text-foreground",
   h4: "text-xs font-semibold text-muted uppercase tracking-wide",
 };
 
@@ -45,7 +45,7 @@ interface TextProps {
 
 const textSizeClasses = { xs: "text-xs", sm: "text-sm", base: "text-base" };
 const textVariantClasses = {
-  default: "text-black dark:text-[#e8e8e8]",
+  default: "text-foreground",
   muted: "text-muted",
   faint: "text-faint",
 };
@@ -83,8 +83,8 @@ export function InlineCode({ children, className }: CodeProps) {
   return (
     <code
       className={cn(
-        "font-mono text-xs bg-gray-100 dark:bg-[#1a1a1a] border border-grid",
-        "px-1 py-0.5 rounded-sm text-black dark:text-[#e8e8e8]",
+        "font-mono text-xs bg-code border border-grid",
+        "px-1 py-0.5 rounded-sm text-foreground",
         className,
       )}
     >
