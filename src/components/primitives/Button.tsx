@@ -20,8 +20,8 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 }
 
 const base =
-  "inline-flex items-center justify-center gap-1.5 font-mono tracking-tight " +
-  "rounded-sm transition focus-visible:outline-none focus-visible:ring-2 " +
+  "inline-flex items-center justify-center gap-1.5 font-mono tracking-[0.16px] uppercase font-semibold " +
+  "rounded-[4px] transition focus-visible:outline-none focus-visible:ring-2 " +
   "focus-visible:ring-accent/60 disabled:pointer-events-none disabled:opacity-50 " +
   "select-none cursor-pointer";
 
@@ -40,9 +40,9 @@ const variants: Record<ButtonVariant, string> = {
 };
 
 const sizes: Record<ButtonSize, string> = {
-  sm:  "px-2.5 py-1 text-[10px]",
-  md:  "px-4 py-2 text-xs",
-  lg:  "px-6 py-2.5 text-sm",
+  sm: "px-2.5 py-1 text-[11px]",
+  md: "px-4 py-2 text-[13px]",
+  lg: "px-6 py-2.5 text-sm",
 };
 
 export function Button({
